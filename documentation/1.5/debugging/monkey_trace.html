@@ -1,0 +1,788 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Monkey Trace mode | Monkey HTTP Server v1.5</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.1.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../debugging/lttng.html" />
+    
+    
+    <link rel="prev" href="../debugging/gdb.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="7.2" data-basepath=".." data-revision="Sun Aug 09 2015 12:17:42 GMT-0600 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="about/index.html">
+            
+                
+                    <a href="../about/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        About
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="about/license.html">
+            
+                
+                    <a href="../about/license.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        License
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="getting_started/index.html">
+            
+            <span><b>2.</b> Getting Started</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="getting_started/installation.html">
+            
+                
+                    <a href="../getting_started/installation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Installation
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting_started/memory_allocator.html">
+            
+                
+                    <a href="../getting_started/memory_allocator.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Memory Allocator
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="configuration/index.html">
+            
+                
+                    <a href="../configuration/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Configuration
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="configuration/structure.html">
+            
+                
+                    <a href="../configuration/structure.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Structure
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="configuration/files_schema.html">
+            
+                
+                    <a href="../configuration/files_schema.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Files Schema
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="configuration/server.html">
+            
+                
+                    <a href="../configuration/server.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Server Core
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="configuration/mimetypes.html">
+            
+                
+                    <a href="../configuration/mimetypes.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        MIME Types
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="configuration/plugins.html">
+            
+                
+                    <a href="../configuration/plugins.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Plugins
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="configuration/ipv6.html">
+            
+                
+                    <a href="../configuration/ipv6.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        IPv6
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="virtualhosts/index.html">
+            
+                
+                    <a href="../virtualhosts/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Virtual Hosts
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="virtualhosts/configuring.html">
+            
+                
+                    <a href="../virtualhosts/configuring.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Configuring
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="plugins/index.html">
+            
+                
+                    <a href="../plugins/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Plugins
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="plugins/basic_auth.html">
+            
+                
+                    <a href="../plugins/basic_auth.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Basic Authentication
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="plugins/cheetah_shell.html">
+            
+                
+                    <a href="../plugins/cheetah_shell.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Cheetah! Shell
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="plugins/cgi.html">
+            
+                
+                    <a href="../plugins/cgi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        CGI
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="plugins/dirlisting.html">
+            
+                
+                    <a href="../plugins/dirlisting.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Directory Listing
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="plugins/fastcgi.html">
+            
+                
+                    <a href="../plugins/fastcgi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        FastCGI
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="plugins/log_writer.html">
+            
+                
+                    <a href="../plugins/log_writer.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        Log Writer
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="plugins/liana.html">
+            
+                
+                    <a href="../plugins/liana.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        Liana
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="plugins/mandril_security.html">
+            
+                
+                    <a href="../plugins/mandril_security.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        Mandril Security
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="plugins/ssl_tls.html">
+            
+                
+                    <a href="../plugins/ssl_tls.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        SSL &amp; TLS / HTTPS
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="embedded/index.html">
+            
+                
+                    <a href="../embedded/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Embedded Linux
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="embedded/raspberry.html">
+            
+                
+                    <a href="../embedded/raspberry.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Raspberry Pi
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="embedded/yocto.html">
+            
+                
+                    <a href="../embedded/yocto.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Yocto Project
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="debugging/index.html">
+            
+                
+                    <a href="../debugging/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Debugging
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="debugging/gdb.html">
+            
+                
+                    <a href="../debugging/gdb.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        GNU Debugger
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="7.2" data-path="debugging/monkey_trace.html">
+            
+                
+                    <a href="../debugging/monkey_trace.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Monkey Trace mode
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="debugging/lttng.html">
+            
+                
+                    <a href="../debugging/lttng.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Linux Trace Toolkit
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Monkey HTTP Server v1.5</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="monkey-trace">Monkey Trace</h1>
+<p>Monkey comes with an optional <strong>Trace</strong> mode that can be only enabled on compile time. It aim to print to <strong>STDOUT</strong> different trace messages across different sections of the core when running.</p>
+<p>Due to it&apos;s verbosity this <strong>Trace</strong> mode should only used under a development context as performance is affected. Never enable <strong>Trace</strong> mode on production.</p>
+<p>A printed trace line is formed using the following format:</p>
+<pre><code>~ seconds:milliseconds [component|file:line] function() message
+</code></pre><p>Description of each field below:</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>seconds</td>
+<td>elapsed time in seconds since the server started</td>
+</tr>
+<tr>
+<td>milliseconds</td>
+<td>number of milliseconds for the current seconds unit</td>
+</tr>
+<tr>
+<td>component</td>
+<td>Monkey component, can be core or a plugin name</td>
+</tr>
+<tr>
+<td>file</td>
+<td>Filename where the trace was generated</td>
+</tr>
+<tr>
+<td>line</td>
+<td>Line of the file where the trace was generated</td>
+</tr>
+<tr>
+<td>function</td>
+<td>Caller function()</td>
+</tr>
+<tr>
+<td>message</td>
+<td>Trace message</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuring">Configuring</h2>
+<p>As said, Monkey needs to be recompiled with <strong>Trace</strong> mode enabled, to accomplish that append the <strong>--trace</strong> argument to the configure script:</p>
+<pre><code class="lang-shell">$ ./configure --trace
+</code></pre>
+<p>Now is suggested to clean up any old object file and recompile:</p>
+<pre><code class="lang-shell">$ make clean
+$ make
+</code></pre>
+<h2 id="usage">Usage</h2>
+<p>To verify that <strong>Trace</strong> mode was enabled, start Monkey server and check the output printed to STDOUT:</p>
+<pre><code class="lang-shell">$ bin/monkey
+~  0.338244 [core|monkey.c:255] main() Monkey TRACE is enabled
+Monkey HTTP Server 1.5.6
+Built : Mar 2 2015 08:46:25 (gcc 4.8.2)
+Home  : http://monkey-project.com
+~  0.338750 [core|mk_vhost.c:394] mk_vhost_read() Map error page: status 404 -&gt; 404.html
+~  0.338836 [core|mk_file.c:100] mk_file_get_info() warning: target has not execution permission
+~  0.339356 [core|mk_file.c:100] mk_file_get_info() warning: target has not execution permission
+~  0.339618 [core|mk_plugin.c:500] mk_plugin_read_config() Load Plugin &apos;liana@/home/edsiper/coding/monkey/plugins/liana/monkey-liana.so&apos;
+~  0.339655 [core|mk_plugin.c:821] mk_plugin_preworker_calls() [liana] Set thread key
+[+] Process ID is 6204
+[+] Server socket listening on Port 2001
+[+] 4 threads, 126 client connections per thread, total 504
+[+] Transport layer by liana in http mode
+[+] Linux Features: TCP_FASTOPEN SO_REUSEPORT
+</code></pre>
+<p>Now we can see in the top line after the server signature a message like this:</p>
+<pre><code>~  0.338244 [core|monkey.c:255] main() Monkey TRACE is enabled
+</code></pre><p>Once the server start receiving requests the <strong>Trace</strong> feature will print out messages about everything that is happening internally.</p>
+<h2 id="filtering">Filtering</h2>
+<p>Sometimes when using <strong>Trace</strong> mode we want to only trace specific files of Monkey core or some specific plugin, for this purpose exists a filtering mechanism that allows to just print desired events that happens on a specific file name.</p>
+<p>A filter is set using the environment variable <strong>MK_TRACE_FILTER</strong>, many file names can be added. As an example, if we would just be interested into get trace messages from the Monkey Scheduler we should set the filter as follows:</p>
+<pre><code class="lang-shell">$ export MK_TRACE_FILTER=&quot;mk_scheduler.c&quot;
+$ bin/monkey
+</code></pre>
+<p>As described, the filter must be set before to start Monkey. If you want to also trace multiple files just append them in the same filter line, e.g: if we are also interested into the Event Loop traces we should do:</p>
+<pre><code class="lang-shell">$ export MK_TRACE_FILTER=&quot;mk_scheduler.c mk_epoll.c&quot;
+$ bin/monkey
+</code></pre>
+<p>Remember that <strong>Monkey Trace</strong> should not be enabled on production, just for development purposes.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../debugging/gdb.html" class="navigation navigation-prev " aria-label="Previous page: GNU Debugger"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../debugging/lttng.html" class="navigation navigation-next " aria-label="Next page: Linux Trace Toolkit"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

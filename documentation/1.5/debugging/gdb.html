@@ -1,0 +1,779 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>GNU Debugger | Monkey HTTP Server v1.5</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.1.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../debugging/monkey_trace.html" />
+    
+    
+    <link rel="prev" href="../debugging/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="7.1" data-basepath=".." data-revision="Sun Aug 09 2015 12:17:42 GMT-0600 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="about/index.html">
+            
+                
+                    <a href="../about/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        About
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="about/license.html">
+            
+                
+                    <a href="../about/license.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        License
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="getting_started/index.html">
+            
+            <span><b>2.</b> Getting Started</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="getting_started/installation.html">
+            
+                
+                    <a href="../getting_started/installation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Installation
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting_started/memory_allocator.html">
+            
+                
+                    <a href="../getting_started/memory_allocator.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Memory Allocator
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="configuration/index.html">
+            
+                
+                    <a href="../configuration/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Configuration
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="configuration/structure.html">
+            
+                
+                    <a href="../configuration/structure.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Structure
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="configuration/files_schema.html">
+            
+                
+                    <a href="../configuration/files_schema.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Files Schema
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="configuration/server.html">
+            
+                
+                    <a href="../configuration/server.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Server Core
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="configuration/mimetypes.html">
+            
+                
+                    <a href="../configuration/mimetypes.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        MIME Types
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="configuration/plugins.html">
+            
+                
+                    <a href="../configuration/plugins.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Plugins
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="configuration/ipv6.html">
+            
+                
+                    <a href="../configuration/ipv6.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        IPv6
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="virtualhosts/index.html">
+            
+                
+                    <a href="../virtualhosts/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Virtual Hosts
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="virtualhosts/configuring.html">
+            
+                
+                    <a href="../virtualhosts/configuring.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Configuring
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="plugins/index.html">
+            
+                
+                    <a href="../plugins/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Plugins
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="plugins/basic_auth.html">
+            
+                
+                    <a href="../plugins/basic_auth.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Basic Authentication
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="plugins/cheetah_shell.html">
+            
+                
+                    <a href="../plugins/cheetah_shell.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Cheetah! Shell
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="plugins/cgi.html">
+            
+                
+                    <a href="../plugins/cgi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        CGI
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="plugins/dirlisting.html">
+            
+                
+                    <a href="../plugins/dirlisting.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Directory Listing
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="plugins/fastcgi.html">
+            
+                
+                    <a href="../plugins/fastcgi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        FastCGI
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="plugins/log_writer.html">
+            
+                
+                    <a href="../plugins/log_writer.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        Log Writer
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="plugins/liana.html">
+            
+                
+                    <a href="../plugins/liana.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        Liana
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="plugins/mandril_security.html">
+            
+                
+                    <a href="../plugins/mandril_security.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        Mandril Security
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="plugins/ssl_tls.html">
+            
+                
+                    <a href="../plugins/ssl_tls.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        SSL &amp; TLS / HTTPS
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="embedded/index.html">
+            
+                
+                    <a href="../embedded/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Embedded Linux
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="embedded/raspberry.html">
+            
+                
+                    <a href="../embedded/raspberry.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Raspberry Pi
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="embedded/yocto.html">
+            
+                
+                    <a href="../embedded/yocto.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Yocto Project
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="debugging/index.html">
+            
+                
+                    <a href="../debugging/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Debugging
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="7.1" data-path="debugging/gdb.html">
+            
+                
+                    <a href="../debugging/gdb.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        GNU Debugger
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="debugging/monkey_trace.html">
+            
+                
+                    <a href="../debugging/monkey_trace.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Monkey Trace mode
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="debugging/lttng.html">
+            
+                
+                    <a href="../debugging/lttng.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Linux Trace Toolkit
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Monkey HTTP Server v1.5</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="gnu-debugger">GNU Debugger</h1>
+<p>One of the most famous debuggers available on Linux and general Unix based systems is the GNU Debugger, well known as GDB. This section do not aim to explain how GDB works, but it specify the minimum requirements to make it work and be able to trace Monkey program properly.</p>
+<p>If you want to get more details about GDB and it features, please refer to the official documentation from the GNU site:</p>
+<p><a href="http://www.gnu.org/software/gdb/documentation/" target="_blank">http://www.gnu.org/software/gdb/documentation/</a></p>
+<h2 id="requirements">Requirements</h2>
+<p>In order to use GDB, your Linux system must have the following tools:</p>
+<ul>
+<li>GCC or CLANG compiler</li>
+<li>GDB</li>
+</ul>
+<p>Monkey must be compiled with debugging symbols, those can be enabled on <strong>configure</strong> time appending the <strong>--debug</strong> parameter, e.g:</p>
+<pre><code class="lang-shell">$ ./configure --debug
+</code></pre>
+<p>after compile through <strong>make</strong> command, the Monkey binary file will contain debugging symbols, you can do a simple check with the <strong>file</strong> command:</p>
+<pre><code class="lang-shell">$ file bin/monkey
+bin/monkey: ELF 64-bit LSB  executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=f15b588d793ddf095c294d418aa8c834e330f738, not stripped
+</code></pre>
+<p>the output of the <strong>file</strong> command should indicate at the end <strong>not stripped</strong>.</p>
+<h2 id="testing-monkey-with-gdb">Testing Monkey with GDB</h2>
+<p>Running GDB is pretty straighforward, from the command line you need to use the <strong>gdb</strong> program name and append the Monkey binary file:</p>
+<pre><code class="lang-shell">$ gdb bin/monkey
+GNU gdb (Ubuntu 7.7-0ubuntu3) 7.7
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http: gnu.org="" licenses="" gpl.html="">
+
+(gdb)
+</http:></code></pre>
+<p>When reach the GDB prompt <strong>(gdb)</strong>, you can start running Monkey, or before that specify specific debugging instructions such as breakpoints.</p>
+<p>On this simple test we will run Monkey under GDB and signal the Monkey process to simulate a segmentation fault, on that moment GDB will trap the exception and return back the control:</p>
+<pre><code class="lang-shell">$ gdb bin/monkey
+$ gdb bin/monkey
+GNU gdb (Ubuntu 7.7-0ubuntu3) 7.7
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http: gnu.org="" licenses="" gpl.html="">
+
+(gdb)
+</http:></code></pre>
+<p>Once in the GDB prompt, launch Monkey issuing the <strong>run</strong> GDB command:</p>
+<pre><code class="lang-shell">(gdb) run
+Starting program: /home/edsiper/coding/monkey/bin/monkey
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;.
+Monkey HTTP Server 1.5.6
+Built : Mar  2 2015 19:43:23 (gcc 4.8.2)
+Home  : http://monkey-project.com
+[New Thread 0x7ffff73ee700 (LWP 19097)]
+[New Thread 0x7ffff6bed700 (LWP 19098)]
+[New Thread 0x7ffff63ec700 (LWP 19099)]
+[New Thread 0x7ffff5beb700 (LWP 19100)]
+[New Thread 0x7ffff53ea700 (LWP 19101)]
+[+] Process ID is 19093
+[+] Server socket listening on Port 2001
+[+] 4 threads, 126 client connections per thread, total 504
+[+] Transport layer by liana in http mode
+[+] Linux Features: TCP_FASTOPEN SO_REUSEPORT
+</code></pre>
+<p>You should see a similar output as the described above, the first step now would be to identify the Monkey process identificator or PID from the given output. On this case the PID is 19093:</p>
+<pre><code>[+] Process ID is 19093
+</code></pre><p>From a different terminal we will signal the main process through the <strong>kill</strong> command issuing a SIGSEGV signal to emulate a segmentation fault:</p>
+<pre><code class="lang-shell">$ kill -SIGSEGV 19093
+</code></pre>
+<p>Going back to the terminal where GDB and Monkey are running, we catch the segmentation faul event:</p>
+<pre><code class="lang-shell">Program received signal SIGSEGV, Segmentation fault.
+0x00007ffff76b3d7d in nanosleep () at ../sysdeps/unix/syscall-template.S:81
+../sysdeps/unix/syscall-template.S: No such file or directory.
+(gdb)
+</code></pre>
+<p>If desired, the backtrace command through the <strong>bt</strong> shortcut can be used in GDB to obtain a detailed trace of when the problem was faced:</p>
+<pre><code class="lang-shell">(gdb) bt
+#0  0x00007ffff76b3d7d in nanosleep () at ../sysdeps/unix/syscall-template.S:81
+#1  0x00007ffff76b3c14 in __sleep (seconds=0) at ../sysdeps/unix/sysv/linux/sleep.c:137
+#2  0x000000000041484e in mk_server_loop (server_fd=-1) at mk_server.c:90
+#3  0x0000000000406bc3 in main (argc=1, argv=0x7fffffffdf08) at monkey.c:350
+</code></pre>
+<p>GDB can be used mostly when troubleshooting a Segmentation fault or tracing specific variables changes within others, as said, is suggested to refer to the official GDB documentation for more details.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../debugging/index.html" class="navigation navigation-prev " aria-label="Previous page: Debugging"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../debugging/monkey_trace.html" class="navigation navigation-next " aria-label="Next page: Monkey Trace mode"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

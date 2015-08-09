@@ -1,0 +1,761 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Cheetah! Shell | Monkey HTTP Server v1.5</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.1.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../plugins/cgi.html" />
+    
+    
+    <link rel="prev" href="../plugins/basic_auth.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="5.2" data-basepath=".." data-revision="Sun Aug 09 2015 12:17:42 GMT-0600 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="about/index.html">
+            
+                
+                    <a href="../about/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        About
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="about/license.html">
+            
+                
+                    <a href="../about/license.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        License
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="getting_started/index.html">
+            
+            <span><b>2.</b> Getting Started</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="getting_started/installation.html">
+            
+                
+                    <a href="../getting_started/installation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Installation
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting_started/memory_allocator.html">
+            
+                
+                    <a href="../getting_started/memory_allocator.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Memory Allocator
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="configuration/index.html">
+            
+                
+                    <a href="../configuration/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Configuration
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="configuration/structure.html">
+            
+                
+                    <a href="../configuration/structure.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Structure
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="configuration/files_schema.html">
+            
+                
+                    <a href="../configuration/files_schema.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Files Schema
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="configuration/server.html">
+            
+                
+                    <a href="../configuration/server.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Server Core
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="configuration/mimetypes.html">
+            
+                
+                    <a href="../configuration/mimetypes.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        MIME Types
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="configuration/plugins.html">
+            
+                
+                    <a href="../configuration/plugins.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Plugins
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="configuration/ipv6.html">
+            
+                
+                    <a href="../configuration/ipv6.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        IPv6
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="virtualhosts/index.html">
+            
+                
+                    <a href="../virtualhosts/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Virtual Hosts
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="virtualhosts/configuring.html">
+            
+                
+                    <a href="../virtualhosts/configuring.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Configuring
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="plugins/index.html">
+            
+                
+                    <a href="../plugins/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Plugins
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="plugins/basic_auth.html">
+            
+                
+                    <a href="../plugins/basic_auth.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Basic Authentication
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.2" data-path="plugins/cheetah_shell.html">
+            
+                
+                    <a href="../plugins/cheetah_shell.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Cheetah! Shell
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="plugins/cgi.html">
+            
+                
+                    <a href="../plugins/cgi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        CGI
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="plugins/dirlisting.html">
+            
+                
+                    <a href="../plugins/dirlisting.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Directory Listing
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="plugins/fastcgi.html">
+            
+                
+                    <a href="../plugins/fastcgi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        FastCGI
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="plugins/log_writer.html">
+            
+                
+                    <a href="../plugins/log_writer.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        Log Writer
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="plugins/liana.html">
+            
+                
+                    <a href="../plugins/liana.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        Liana
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="plugins/mandril_security.html">
+            
+                
+                    <a href="../plugins/mandril_security.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        Mandril Security
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="plugins/ssl_tls.html">
+            
+                
+                    <a href="../plugins/ssl_tls.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        SSL &amp; TLS / HTTPS
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="embedded/index.html">
+            
+                
+                    <a href="../embedded/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Embedded Linux
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="embedded/raspberry.html">
+            
+                
+                    <a href="../embedded/raspberry.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Raspberry Pi
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="embedded/yocto.html">
+            
+                
+                    <a href="../embedded/yocto.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Yocto Project
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="debugging/index.html">
+            
+                
+                    <a href="../debugging/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Debugging
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="debugging/gdb.html">
+            
+                
+                    <a href="../debugging/gdb.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        GNU Debugger
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="debugging/monkey_trace.html">
+            
+                
+                    <a href="../debugging/monkey_trace.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Monkey Trace mode
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="debugging/lttng.html">
+            
+                
+                    <a href="../debugging/lttng.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Linux Trace Toolkit
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Monkey HTTP Server v1.5</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="cheetah-shell">Cheetah! Shell</h1>
+<p>Monkey through the plugin named Cheetah! provides a command shell which can be used to retrieve running information from the server.</p>
+<p>Retrieve information from a running web server is very important when monitoring or troubleshooting unexpected behaviors. Cheetah! provides a command line interface to perform read-only operations (by now) about the running Monkey instance.</p>
+<p>Cheetah! can be accessed from the command line through STDIN if Monkey did not go in background or directly through a unix pipe. Lets review how to make it work.</p>
+<h2 id="enable-plugin">Enable Plugin</h2>
+<p>To enable the <strong>Cheetah!</strong> plugin, please follow the steps mentioned on <a href="../configuration/plugins.html">Plugins</a> section. The plugin name is <strong>monkey-cheetah.so</strong>, so make sure the plugin entry is <strong>Load</strong> and the absolute path is correct.</p>
+<h2 id="configuring">Configuring</h2>
+<p>Once the plugin is loaded, we need to proceed to edit the Cheetah! configuration file which could be located in the Monkey configuration directory like <strong>conf/plugins/cheetah/cheetah.conf</strong>.</p>
+<pre><code class="lang-Python">[CHEETAH]
+    <span class="hljs-comment"># Listen :</span>
+    <span class="hljs-comment"># --------</span>
+    <span class="hljs-comment"># Cheetah! listen for input commands as any shell, this can be done</span>
+    <span class="hljs-comment"># using the standard keyboard input or through a unix pipe where you</span>
+    <span class="hljs-comment"># need to connect using the Cheetah! client.</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># The Listen directive allows you to define which input method to use.</span>
+    <span class="hljs-comment"># Valid values for Listen are STDIN or SERVER.</span>
+    <span class="hljs-comment">#</span>
+    Listen SERVER
+</code></pre>
+<p>The Listen key as described can take two values:</p>
+<h3 id="stdin">STDIN</h3>
+<p>Cheetah! will listing for incoming commands from STDIN, this option requires that Monkey do not run in background mode</p>
+<h3 id="server">SERVER</h3>
+<p>Cheetah! will open a unix socket to listen for incoming commands. If monkey runs in TCP port 2001 the unix socket filename will be located at /tmp/cheetah.2001 . Try to connect with netcat utility:</p>
+<pre><code class="lang-shell">$ nc -U /tmp/cheetah.2001
+*** Welcome to Cheetah!, the Monkey Shell :) ***
+
+      &lt;&lt; Type &apos;help&apos; or &apos;\h&apos; for help &gt;&gt;
+
+cheetah&gt;
+</code></pre>
+<p>If you are connected to Cheetah! type help to see the available options:</p>
+<pre><code>$ nc -U /tmp/cheetah.2001
+
+*** Welcome to Cheetah!, the Monkey Shell :) ***
+
+      &lt;&lt; Type &apos;help&apos; or &apos;\h&apos; for help &gt;&gt;
+
+cheetah&gt; help
+List of available commands for Cheetah Shell
+
+command  shortcut  description
+----------------------------------------------------
+?          (\?)    Synonym for &apos;help&apos;
+config     (\f)    Display global configuration
+plugins    (\g)    List loaded plugins and associated stages
+status     (\s)    Display general web server information
+uptime     (\u)    Display how long the web server has been running
+vhosts     (\v)    List virtual hosts configured
+workers    (\w)    Show thread workers information
+
+clear      (\c)    Clear screen
+help       (\h)    Print this help
+quit       (\q)    Exit Cheetah shell :_(
+
+cheetah&gt;
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../plugins/basic_auth.html" class="navigation navigation-prev " aria-label="Previous page: Basic Authentication"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../plugins/cgi.html" class="navigation navigation-next " aria-label="Next page: CGI"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

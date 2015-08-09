@@ -1,0 +1,777 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Server Core | Monkey HTTP Server v1.5</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.1.0">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../configuration/mimetypes.html" />
+    
+    
+    <link rel="prev" href="../configuration/files_schema.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="3.3" data-basepath=".." data-revision="Sun Aug 09 2015 12:17:42 GMT-0600 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="about/index.html">
+            
+                
+                    <a href="../about/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        About
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="about/license.html">
+            
+                
+                    <a href="../about/license.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        License
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="getting_started/index.html">
+            
+            <span><b>2.</b> Getting Started</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="getting_started/installation.html">
+            
+                
+                    <a href="../getting_started/installation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Installation
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="getting_started/memory_allocator.html">
+            
+                
+                    <a href="../getting_started/memory_allocator.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Memory Allocator
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="configuration/index.html">
+            
+                
+                    <a href="../configuration/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Configuration
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="configuration/structure.html">
+            
+                
+                    <a href="../configuration/structure.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Structure
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="configuration/files_schema.html">
+            
+                
+                    <a href="../configuration/files_schema.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Files Schema
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="configuration/server.html">
+            
+                
+                    <a href="../configuration/server.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Server Core
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="configuration/mimetypes.html">
+            
+                
+                    <a href="../configuration/mimetypes.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        MIME Types
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="configuration/plugins.html">
+            
+                
+                    <a href="../configuration/plugins.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        Plugins
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="configuration/ipv6.html">
+            
+                
+                    <a href="../configuration/ipv6.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        IPv6
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="virtualhosts/index.html">
+            
+                
+                    <a href="../virtualhosts/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Virtual Hosts
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="virtualhosts/configuring.html">
+            
+                
+                    <a href="../virtualhosts/configuring.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Configuring
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="plugins/index.html">
+            
+                
+                    <a href="../plugins/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Plugins
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="plugins/basic_auth.html">
+            
+                
+                    <a href="../plugins/basic_auth.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Basic Authentication
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="plugins/cheetah_shell.html">
+            
+                
+                    <a href="../plugins/cheetah_shell.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Cheetah! Shell
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="plugins/cgi.html">
+            
+                
+                    <a href="../plugins/cgi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        CGI
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="plugins/dirlisting.html">
+            
+                
+                    <a href="../plugins/dirlisting.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        Directory Listing
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="plugins/fastcgi.html">
+            
+                
+                    <a href="../plugins/fastcgi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        FastCGI
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="plugins/log_writer.html">
+            
+                
+                    <a href="../plugins/log_writer.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        Log Writer
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="plugins/liana.html">
+            
+                
+                    <a href="../plugins/liana.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        Liana
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="plugins/mandril_security.html">
+            
+                
+                    <a href="../plugins/mandril_security.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        Mandril Security
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="plugins/ssl_tls.html">
+            
+                
+                    <a href="../plugins/ssl_tls.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        SSL &amp; TLS / HTTPS
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="embedded/index.html">
+            
+                
+                    <a href="../embedded/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Embedded Linux
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="embedded/raspberry.html">
+            
+                
+                    <a href="../embedded/raspberry.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Raspberry Pi
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="embedded/yocto.html">
+            
+                
+                    <a href="../embedded/yocto.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Yocto Project
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="debugging/index.html">
+            
+                
+                    <a href="../debugging/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Debugging
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="debugging/gdb.html">
+            
+                
+                    <a href="../debugging/gdb.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        GNU Debugger
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="debugging/monkey_trace.html">
+            
+                
+                    <a href="../debugging/monkey_trace.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Monkey Trace mode
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="debugging/lttng.html">
+            
+                
+                    <a href="../debugging/lttng.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Linux Trace Toolkit
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Monkey HTTP Server v1.5</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="server-core">Server Core</h1>
+<p>The Server core configuration resides in the file <strong>monkey.conf</strong>, which is the primary and mandatory configuration file for Monkey HTTP Server. It contains many keys that can alter the server behavior, all of them are associated under the <strong>SERVER</strong> section. Below a description on each one found on this Monkey version.</p>
+<h3 id="port">Port</h3>
+<p>Port represents the number of the TCP door on which Monkey will be listening for incoming  connections and HTTP requests. This number can have any value between 1 and 65535. Just note that for TCP ports under 1024 requires root priviledges.</p>
+<pre><code>Port 2001
+</code></pre><p>By default Monkey comes configured to use TCP port 2001, this number represents when the Project was born, but of course any available TCP port can be used.</p>
+<h3 id="listen">Listen</h3>
+<p>On Linux as on any Unix OS, can exists many network interfaces that may represent physical or virtual Ethernet devices. The Listen key specify where the Server should listen for incoming connections. It must be assiged to an IPv4 or IPv6 address. By default the Server listen on all interfaces on IPv4 mode which is represented by <strong>0.0.0.0</strong>.</p>
+<p>As an example, to restrict only connections coming from localhost which is represented by the IPv4 address <strong>127.0.0.1</strong>, the configuration should look as follows:</p>
+<pre><code>Listen 127.0.0.1
+</code></pre><p>In the other hand, to restrict to localhost connections but in IPv6 mode you should use:</p>
+<pre><code>Listen ::1
+</code></pre><p>By default this key is commented on the configuration.</p>
+<h3 id="workers">Workers</h3>
+<p>Monkey architecture is designed to work in asyncronous mode and in order to scale on SMP systems, it allows to spawn a fixed number of threads called Workers. Each worker is capable to handle thousands of connections if the system allows that.</p>
+<p>The Workers key defines the number of Workers to spawn when Monkey starts. By default this key comes with value <strong>0</strong> which aims to spawn one worker per existent CPU core.</p>
+<pre><code>Workers 0
+</code></pre><h3 id="timeout">Timeout</h3>
+<p>The Timeout key, represents the largest span of time expressed in seconds, during which a connected client should issue a complete request. The Timeout value must be &gt; 0. By default is 15 seconds.</p>
+<pre><code>Timeout 15
+</code></pre><h3 id="pidfile">PidFile</h3>
+<p>The PidFile key specifies where the Server stores the process identificator when starting up.</p>
+<pre><code>PidFile /home/foo/monkey/logs/monkey.pid
+</code></pre><h3 id="userdir">UserDir</h3>
+<p>Monkey is capable to serve public system users directories, they are accessed through the URI prefix <strong>/~username</strong>. The UserDir key specifies the public directory name that must be located on each user home directory.</p>
+<pre><code>UserDir public_html
+</code></pre><h3 id="indexfile">IndexFile</h3>
+<p>When an incoming HTTP request arrives and it&apos;s mapped to a file system directory, the Server needs to know which file serve by default. The IndexFile key allows to define multiple files that are looked up in order, the values must be file names, not relative or absolute paths.</p>
+<pre><code>Indexfile index.html index.htm index.php
+</code></pre><h3 id="hideversion">HideVersion</h3>
+<p>For security reasons users may want to hide the specific Server version, enabling this flag will turn the version to be hided when sending HTTP responses. The key accepts boolean values <strong>on</strong> and <strong>off</strong>. By default this value is <strong>off</strong>.</p>
+<pre><code>HideVersion off
+</code></pre><h3 id="resume">Resume</h3>
+<p>When serving static files, a client may want to request a range of bytes instead of a complete file. The Resume key turns this feature enabled or disabled in the Server. The key accepts boolean values <strong>on</strong> and <strong>off</strong>. By default this value is <strong>on</strong>.</p>
+<pre><code>Resume on
+</code></pre><h3 id="user">User</h3>
+<p>The server can run as a different user at process level. To accomplish this the User key allows to define the user that the running process will change to. This will only happen if the original user have root priviledges. If this Key is commented out, no user change will be done.</p>
+<pre><code>User www-data
+</code></pre><h2 id="advanced-configuration">Advanced Configuration</h2>
+<p>The following configuration keys aims to be used by advanced users, just use them on specific cases where is really needed.</p>
+<h3 id="keepalive">KeepAlive</h3>
+<p>It allows to enable or disable the HTTP KeepAlive feature. The key accepts boolean values <strong>on</strong> and <strong>off</strong>. By default this value is <strong>on</strong>.</p>
+<pre><code>KeepAlive on
+</code></pre><h3 id="keepalivetimeout">KeepAliveTimeout</h3>
+<p>On a HTTP KeepAlive session, specify the number of seconds to wait for the next incoming request, once the KeepAliveTimeout value is reached the connection is closed. The value must be &gt; 0. By default this value is <strong>5</strong>.</p>
+<pre><code>KeepAliveTimeout 5
+</code></pre><h3 id="maxkeepaliverequest">MaxKeepAliveRequest</h3>
+<p>Under a HTTP KeepAlive session, set the maximum number of HTTP requests allowed. This value must be &gt; 0. By default this value is <strong>1000</strong>.</p>
+<pre><code>MaxKeepAliveRequest 1000
+</code></pre><h3 id="maxrequestsize">MaxRequestSize</h3>
+<p>When a HTTP request arrives, Monkey allocates a fixed memory buffer. If the incoming request data is larger than the original buffer size, it will allocate more space as needed. The MaxRequestSize key defines the maximum number of KiloBytes than a buffer can grow. Example: defining <strong>MaxRequestSize 32</strong> means 32 Kilobytes. The value defined must be greater than zero. Default value defined is 32.</p>
+<pre><code>MaxRequestSize 32
+</code></pre><h3 id="symlink">SymLink</h3>
+<p>A HTTP request may target a file which is in reallity a symbolic link in the file system. The SymLink key defines if the server may serve or not the linked target file. The key accepts boolean values <strong>on</strong> and <strong>off</strong>. By default this value is <strong>off</strong>.</p>
+<pre><code>SymLink Off
+</code></pre><h3 id="transportlayer">TransportLayer</h3>
+<p>Monkey core needs to know which Plugin handle the transport layer. The value specified for this key belongs to the shortname of the Plugin. The available options are:</p>
+<ul>
+<li>HTTP is provided by liana plugin</li>
+<li>HTTPS is provided by polarssl plugin</li>
+</ul>
+<p>The default value is <strong>liana</strong>.</p>
+<pre><code>TransportLayer liana
+</code></pre><blockquote>
+<p>The TransportLayer plugin must be loaded on <strong>plugins.load</strong> configuration file.</p>
+</blockquote>
+<h3 id="defaultmimetype">DefaultMimeType</h3>
+<p>When a static file is requested and it does not contain a known extension based on the mime types registered on <strong>monkey.mime</strong> configuration file, Monkey will send the mime type specified on this key.</p>
+<pre><code>DefaultMimeType text/plain
+</code></pre><h3 id="fdt">FDT</h3>
+<p>The File Descriptor Table (FDT) it&apos;s an internal mechanism to share open file descriptors under specific threads and virtual host context. When enabled, it helps to reduce the number of opened file descriptors for the same resource and the number of required system calls to open and close files.</p>
+<p>The overhead in memory of this feature is around ~5KB per worker. The key accepts boolean values <strong>on</strong> and <strong>off</strong>. By default this value is <strong>on</strong>.</p>
+<pre><code>FDT on
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../configuration/files_schema.html" class="navigation navigation-prev " aria-label="Previous page: Files Schema"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../configuration/mimetypes.html" class="navigation navigation-next " aria-label="Next page: MIME Types"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
