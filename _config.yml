@@ -33,6 +33,8 @@ social:
     url: https://www.linkedin.com/grp/home?gid=3211216
   - title: github
     url: http://github.com/monkey/monkey
+  - title: rss
+    url: http://blog.monkey-project.com/rss/
 
 # Postal address (add as many lines as necessary)
 address:
