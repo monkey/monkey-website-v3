@@ -1,0 +1,108 @@
+---
+layout: sub
+title: About
+intro: Insights of Monkey
+---
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h3>About Monkey</h3>
+        <p>
+          Monkey is a lightweight and scalable Web Server. Originally made for Linux, it's also compatible with OSX. It have been designed with a strong focus on Embedded devices, therefore its scalable by nature having a low memory and CPU consumption, making it a real solution for high end production servers too.
+        </p>
+        <p>
+          Monkey is built and tested for different architectures such as ARM, x86 and x64.
+        </p>
+      </div>
+      <div class="col-lg-8 col-lg-offset-2">
+        <h3>Features</h3>
+        <p>
+          The following is a list of some features available on Monkey, for more details about all things available please refer to the
+          <a href="/documentation/">official documentation</a>:
+          <ul>
+            <li>HTTP/1.1 compliant</li>
+            <li>Event-driven plus a fixed threading model</li>
+            <li>IPv4 & IPv6</li>
+            <li>Virtual Hosts</li>
+            <li>Indented configuration</li>
+            <li>Plugins Support, static or dynamic</li>
+            <li>C API Interface</li>
+            <li>Other features through base plugins:<br>
+              <ul>
+                <li>SSL/TLS</li>
+                <li>CGI</li>
+                <li>FastCGI</li>
+                <li>SSL</li>
+                <li>Security</li>
+                <li>Log writter</li>
+                <li>Directory Listing</li>
+                <li>Shell: Command line</li>
+              </ul>
+            </li>
+          </ul>
+        </p>
+      </div>
+      <div class="col-lg-8 col-lg-offset-2">
+        <h3>Internals</h3>
+        <p>
+          Monkey uses an hybrid mechanism composed by a fixed number of threads being each one capable to attend thousands of clients thanks to the event-driven model based in asyncrhonous sockets.
+        </p>
+        <p>
+          The interaction between the scheduler and each worker thread is lock free, avoiding race conditions and exposing a huge performance compared to other available options. It also takes the most of the Linux Kernel to optimize the work using specific system calls based on zero-copy strategy.
+        </p>
+      </div>
+      <div class="col-lg-8 col-lg-offset-2">
+        <h3>Plugins</h3>
+        <p>
+          A good and flexible architecture is one of our goals. Monkey have been designed to keep most of the HTTP functionalities in the core and make it extensible through external plugins. Its core is small, depending of the compiler version used, the size of the runtime can be ~300KB. The current plugins are distributed with the sources:
+
+          <ul>
+            <li>SSL/TLS</li>
+            <li>CGI: Common Gateway Interface</li>
+            <li>FastCGI: Fast CGI</li>
+            <li>Liana: networking communication layer</li>
+            <li>Cheetah! Shell: Yes!, Monkey has a shell!</li>
+            <li>Directory Listing</li>
+            <li>Security: access restriction to the service by network address, subnets and request filters</li>
+          </ul>
+        </p>
+      </div>
+      <div class="col-lg-8 col-lg-offset-2">
+        <h3>Optimized for Linux but compatible</h3>
+        <p>
+          Monkey was originally written with a strong focus on Linux and due to the received support we have been able
+          to expanded our efforts to make it compatible with OSX and BSD.
+        </p>
+      </div>
+      <div class="col-lg-8 col-lg-offset-2">
+        <h3>Sponsors</h3>
+        <p>
+          Monkey project is sponsored by it main authors, contributors and the following entities who are actively supporting
+          it development:
+          <ul>
+            <li><a href="http://treasuredata.com">Treasure Data</a></li>
+            <li><a href="http://osuosl.org">Open Source Lab (OSUOSL)</a></li>
+            <li><a href="http://rackspace.com">Rackspace</a></li>
+            <li><a hreg="http://google-melange.com">Google Summer of Code 2012, 2013 & 2014</a></li>
+          </ul>
+        </p>
+      </div>
+      <div class="col-lg-8 col-lg-offset-2">
+        <h3>License</h3>
+        <p>
+          Monkey Server is under the tems of the Apache License v2.0. For any extra requirement or inquiry please write us to
+          eduardo at monkey.io .
+        </p>
+      </div>
+      <div class="col-lg-8 col-lg-offset-2">
+        <h3>Logo & Copyright</h3>
+        <p>
+          All Monkey logos and banners are Copyrighted by <a href="http://edsiper.linuxchile.cl">Eduardo Silva</a>.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

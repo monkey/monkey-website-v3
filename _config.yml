@@ -1,0 +1,47 @@
+# Site settings
+title: Monkey Server
+email: eduardo@monkey.io
+url: http://monkey-project.com
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+skills: "Web Developer - Graphic Artist - User Experience Designer"
+highlighter: pygments
+
+# Contact form: comment the line below if you want to stick with the default PHP contact form
+contact: static
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary: C57407
+  primary-rgb: "197,116,342"
+  secondary: 1D262F
+  secondary-dark: 191F26
+
+# Footer settings
+footer:
+  copyright: Monkey Software
+  location: Location
+  social: Follow us!
+  credits: License
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: twitter
+    url: http://twitter.com/monkeywebserver
+  - title: google-plus
+    url: https://plus.google.com/communities/109231235096868947735
+  - title: linkedin
+    url: https://www.linkedin.com/grp/home?gid=3211216
+  - title: github
+    url: http://github.com/monkey/monkey
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: 3481 Melrose Place
+  - line: Beverly Hills, CA 90210
+
+# Credits content
+credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.'
+
+# Build settings
+markdown: kramdown
+permalink: pretty
