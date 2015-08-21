@@ -28,6 +28,11 @@ intro: Release notes and general announcements
             </thead>
             <tbody>
               <tr>
+                <td>Monkey v1.6.1</td>
+                <td>August 21, 2015</td>
+                <td><a href="/announcements/v1.6.1">/announcements/v1.6.1</a></td>
+              </tr>
+              <tr>
                 <td>Monkey v1.6.0</td>
                 <td>August 10, 2015</td>
                 <td><a href="/announcements/v1.6.0">/announcements/v1.6.0</a></td>
