@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Server Core | Monkey Server v1.6</title>
+        <title>Debian/Ubuntu | Monkey Server v1.6</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.1.0">
@@ -25,10 +25,10 @@
         
     
     
-    <link rel="next" href="../configuration/mimetypes.html" />
+    <link rel="next" href="../getting_started/memory_allocator.html" />
     
     
-    <link rel="prev" href="../configuration/files_schema.html" />
+    <link rel="prev" href="../getting_started/installation.html" />
     
 
         
@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="3.3" data-basepath=".." data-revision="Sun Sep 06 2015 20:01:26 GMT-0600 (CST)">
+    <div class="book" data-level="2.2" data-basepath=".." data-revision="Sun Sep 06 2015 20:01:26 GMT-0600 (CST)">
     
 
 <div class="book-summary">
@@ -133,7 +133,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="getting_started/debian_ubuntu.html">
+        <li class="chapter active" data-level="2.2" data-path="getting_started/debian_ubuntu.html">
             
                 
                     <a href="../getting_started/debian_ubuntu.html">
@@ -214,7 +214,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.3" data-path="configuration/server.html">
+        <li class="chapter " data-level="3.3" data-path="configuration/server.html">
             
                 
                     <a href="../configuration/server.html">
@@ -693,75 +693,24 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="server-core">Server Core</h1>
-<p>The Server core configuration resides in the file <strong>monkey.conf</strong>, which is the primary and mandatory configuration file for Monkey HTTP Server. It contains many keys that can alter the server behavior, all of them are associated under the <strong>SERVER</strong> section. Below a description on each one found on this Monkey version.</p>
-<h3 id="listen">Listen</h3>
-<p>On Linux as on any Unix OS, can exists many network interfaces that may represent physical or virtual Ethernet devices. The Listen key specify where the Server should listen for incoming connections, meaning the interface plus the TCP port. It must be assiged to an IPv4 or IPv6 address. By default the Server listen on all interfaces on IPv4 mode which is represented by <strong>0.0.0.0</strong>.</p>
-<p>The following example will listen on all interfaces through TCP port 2001:</p>
-<pre><code>Listen 2001
-</code></pre><p>In the other hand, to restrict to localhost connections you can do:</p>
-<pre><code>Listen 127.0.0.1 2001
-</code></pre><p>The same applies for a IPv6 based interface:</p>
-<pre><code>Listen ::1 2001
-</code></pre><p>The Listen interface support properties. As of now there is one property available called <em>ssl</em>, which instruct the listener to use a Network plugin who handle SSL/TLS connections, e.g:</p>
-<pre><code>Listen 2001 ssl
-</code></pre><p>You can specify many listeners as required, a common real-world example is:</p>
-<pre><code>Listen  80
-Listen 443 ssl
-</code></pre><p>On this case the port <strong>80</strong> is Listening for text plain connections while <strong>443</strong> through some SSL/TLS layer.</p>
-<h3 id="workers">Workers</h3>
-<p>Monkey architecture is designed to work in asyncronous mode and in order to scale on SMP systems, it allows to spawn a fixed number of threads called Workers. Each worker is capable to handle thousands of connections if the system allows that.</p>
-<p>The Workers key defines the number of Workers to spawn when Monkey starts. By default this key comes with value <strong>0</strong> which aims to spawn one worker per existent CPU core.</p>
-<pre><code>Workers 0
-</code></pre><h3 id="timeout">Timeout</h3>
-<p>The Timeout key, represents the largest span of time expressed in seconds, during which a connected client should issue a complete request. The Timeout value must be &gt; 0. By default is 15 seconds.</p>
-<pre><code>Timeout 15
-</code></pre><h3 id="pidfile">PidFile</h3>
-<p>The PidFile key specifies where the Server stores the process identificator when starting up.</p>
-<pre><code>PidFile /home/foo/monkey/logs/monkey.pid
-</code></pre><h3 id="userdir">UserDir</h3>
-<p>Monkey is capable to serve public system users directories, they are accessed through the URI prefix <strong>/~username</strong>. The UserDir key specifies the public directory name that must be located on each user home directory.</p>
-<pre><code>UserDir public_html
-</code></pre><h3 id="indexfile">IndexFile</h3>
-<p>When an incoming HTTP request arrives and it&apos;s mapped to a file system directory, the Server needs to know which file serve by default. The IndexFile key allows to define multiple files that are looked up in order, the values must be file names, not relative or absolute paths.</p>
-<pre><code>Indexfile index.html index.htm index.php
-</code></pre><h3 id="hideversion">HideVersion</h3>
-<p>For security reasons users may want to hide the specific Server version, enabling this flag will turn the version to be hided when sending HTTP responses. The key accepts boolean values <strong>on</strong> and <strong>off</strong>. By default this value is <strong>off</strong>.</p>
-<pre><code>HideVersion off
-</code></pre><h3 id="resume">Resume</h3>
-<p>When serving static files, a client may want to request a range of bytes instead of a complete file. The Resume key turns this feature enabled or disabled in the Server. The key accepts boolean values <strong>on</strong> and <strong>off</strong>. By default this value is <strong>on</strong>.</p>
-<pre><code>Resume on
-</code></pre><h3 id="user">User</h3>
-<p>The server can run as a different user at process level. To accomplish this the User key allows to define the user that the running process will change to. This will only happen if the original user have root priviledges. If this Key is commented out, no user change will be done.</p>
-<pre><code>User www-data
-</code></pre><h2 id="advanced-configuration">Advanced Configuration</h2>
-<p>The following configuration keys aims to be used by advanced users, just use them on specific cases where is really needed.</p>
-<h3 id="keepalive">KeepAlive</h3>
-<p>It allows to enable or disable the HTTP KeepAlive feature. The key accepts boolean values <strong>on</strong> and <strong>off</strong>. By default this value is <strong>on</strong>.</p>
-<pre><code>KeepAlive on
-</code></pre><h3 id="keepalivetimeout">KeepAliveTimeout</h3>
-<p>On a HTTP KeepAlive session, specify the number of seconds to wait for the next incoming request, once the KeepAliveTimeout value is reached the connection is closed. The value must be &gt; 0. By default this value is <strong>5</strong>.</p>
-<pre><code>KeepAliveTimeout 5
-</code></pre><h3 id="maxkeepaliverequest">MaxKeepAliveRequest</h3>
-<p>Under a HTTP KeepAlive session, set the maximum number of HTTP requests allowed. This value must be &gt; 0. By default this value is <strong>1000</strong>.</p>
-<pre><code>MaxKeepAliveRequest 1000
-</code></pre><h3 id="maxrequestsize">MaxRequestSize</h3>
-<p>When a HTTP request arrives, Monkey allocates a fixed memory buffer. If the incoming request data is larger than the original buffer size, it will allocate more space as needed. The MaxRequestSize key defines the maximum number of KiloBytes than a buffer can grow. Example: defining <strong>MaxRequestSize 32</strong> means 32 Kilobytes. The value defined must be greater than zero. Default value defined is 32.</p>
-<pre><code>MaxRequestSize 32
-</code></pre><h3 id="symlink">SymLink</h3>
-<p>A HTTP request may target a file which is in reallity a symbolic link in the file system. The SymLink key defines if the server may serve or not the linked target file. The key accepts boolean values <strong>on</strong> and <strong>off</strong>. By default this value is <strong>off</strong>.</p>
-<pre><code>SymLink Off
-</code></pre><h3 id="defaultmimetype">DefaultMimeType</h3>
-<p>When a static file is requested and it does not contain a known extension based on the mime types registered on <strong>monkey.mime</strong> configuration file, Monkey will send the mime type specified on this key.</p>
-<pre><code>DefaultMimeType text/plain
-</code></pre><h3 id="fdt">FDT</h3>
-<p>The File Descriptor Table (FDT) it&apos;s an internal mechanism to share open file descriptors under specific threads and virtual host context. When enabled, it helps to reduce the number of opened file descriptors for the same resource and the number of required system calls to open and close files.</p>
-<p>The overhead in memory of this feature is around ~5KB per worker. The key accepts boolean values <strong>on</strong> and <strong>off</strong>. By default this value is <strong>on</strong>.</p>
-<pre><code>FDT on
-</code></pre><h3 id="fdlimit">FDLimit</h3>
-<p>Defines the maximum number of file descriptors that the server can use, it can be translated to the maximum number of connections. If the value is not set, Monkey will use the soft limit imposed to the process (ulimit -n). If the variable is set, Monkey will try to increase or decrease the limit under it restrictions. For values higher that Hard Limit Monkey needs to be started by root user.</p>
-<pre><code>FDT 4096
+                        <h1 id="debian-and-ubuntu">Debian and Ubuntu</h1>
+<p><a href="http://monkey-project.com" target="_blank">Monkey</a> is fully supported on Debian and Ubuntu. We provide our own APT server for packages distribution. To get started, install our GPG key and configure your repository list.</p>
+<h2 id="server-gpg-key">Server GPG key</h2>
+<p>The first step is to add our server GPG key to your keyring, on that way you can get our signed packages:</p>
+<pre><code class="lang-shell">$ wget -qO - http://apt.monkey-project.com/monkey.key | sudo apt-key add -
 </code></pre>
+<h2 id="update-your-sources-lists">Update your sources lists</h2>
+<p>On Debian and derivated systems, you need to add our APT server entry to your sources lists, please add the following content at bottom of your /etc/apt/sources.list file:</p>
+<pre><code class="lang-shell">deb http://apt.monkey-project.com/ubuntu vivid main
+</code></pre>
+<p>then update your repository cache with:</p>
+<pre><code class="lang-shell">$ sudo apt-get update
+</code></pre>
+<h2 id="install-monkey">Install Monkey</h2>
+<p>Using the apt-get command you are able now to install the latest version of Monkey HTTP Server:</p>
+<pre><code class="lang-shell">$ sudo apt-get install monkey
+</code></pre>
+
                     
                     </section>
                 
@@ -771,10 +720,10 @@ Listen 443 ssl
         </div>
 
         
-        <a href="../configuration/files_schema.html" class="navigation navigation-prev " aria-label="Previous page: Files Schema"><i class="fa fa-angle-left"></i></a>
+        <a href="../getting_started/installation.html" class="navigation navigation-prev " aria-label="Previous page: Installation"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../configuration/mimetypes.html" class="navigation navigation-next " aria-label="Next page: MIME Types"><i class="fa fa-angle-right"></i></a>
+        <a href="../getting_started/memory_allocator.html" class="navigation navigation-next " aria-label="Next page: Memory Allocator"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
