@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="6.1" data-basepath=".." data-revision="Wed Aug 12 2015 11:44:39 GMT-0600 (CST)">
+    <div class="book" data-level="6.1" data-basepath=".." data-revision="Sun Sep 06 2015 18:52:55 GMT-0600 (CST)">
     
 
 <div class="book-summary">
@@ -680,21 +680,22 @@
                     
                         <h1 id="raspberry-pi">Raspberry Pi</h1>
 <p><a href="http://monkey-project.com" target="_blank">Monkey</a> is fully supported on the <a href="http://raspberrypi.org" target="_blank">Raspberry Pi</a> board. If you want to use Monkey in your Raspberry Pi device, you can build it from sources as described in the <a href="../getting_started/index.html">Getting Started</a> section or use our binary <strong>Debian</strong> packages that can be obtained from our special APT repository for Raspbian.</p>
-<h2 id="installing-using-apt">Installing using APT</h2>
-<p>In your <strong>/etc/apt/sources.list</strong> configuration file append the following at the end:</p>
-<pre><code class="lang-Shell">deb http://packages.monkey-project.com/primates_pi primates_pi main
+<h2 id="server-gpg-key">Server GPG key</h2>
+<p>The first step is to add our server GPG key to your keyring, on that way you can get our signed packages:</p>
+<pre><code class="lang-shell">$ wget -qO - http://apt.monkey-project.com/monkey.key | sudo apt-key add -
 </code></pre>
-<p>Then update your cache references:</p>
-<pre><code class="lang-Shell">$ sudo apt-get update
+<h2 id="update-your-sources-lists">Update your sources lists</h2>
+<p>On Debian and derivated systems such as Raspbian, you need to add our APT server entry to your sources lists, please add the following content at bottom of your /etc/apt/sources.list file:</p>
+<pre><code class="lang-shell">deb http://apt.monkey-project.com/raspbian wheezy main
 </code></pre>
-<p>Now you will be able to install Monkey on your board:</p>
-<pre><code class="lang-Shell">$ sudo apt-get install monkey
+<h2 id="update-your-repositories-database">Update your repositories database</h2>
+<p>Now let your system update the apt database:</p>
+<pre><code class="lang-shell">$ sudo apt-get update
 </code></pre>
-<p>After that last step, Monkey will be already running , you can do a simple test with <strong>curl</strong> to test connectivity:</p>
-<pre><code class="lang-Shell">curl -i http://raspberry_ip:2001/
+<h2 id="install-monkey">Install Monkey</h2>
+<p>Using the apt-get command you are able now to install the latest version of Monkey HTTP Server:</p>
+<pre><code class="lang-shell">$ sudo apt-get install monkey
 </code></pre>
-<h2 id="using-ssl-tls">Using SSL/TLS</h2>
-<p>Monkey supports SSL/TLS through the <a href="http://tls.mbed.org" target="_blank">mbedTLS</a> library. In order to install the dependency please refer to the <a href="../plugins/tls.html">TLS</a> plugin documentation.</p>
 
                     
                     </section>
