@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="2.2" data-basepath=".." data-revision="Sun Sep 06 2015 21:21:01 GMT-0600 (CST)">
+    <div class="book" data-level="2.2" data-basepath=".." data-revision="Sat Sep 26 2015 21:05:38 GMT-0600 (CST)">
     
 
 <div class="book-summary">
@@ -700,13 +700,20 @@
 <pre><code class="lang-shell">$ wget -qO - http://apt.monkey-project.com/monkey.key | sudo apt-key add -
 </code></pre>
 <h2 id="update-your-sources-lists">Update your sources lists</h2>
-<p>On Debian and derivated systems, you need to add our APT server entry to your sources lists, please add the following content at bottom of your /etc/apt/sources.list file:</p>
-<pre><code class="lang-shell">deb http://apt.monkey-project.com/ubuntu vivid main
-</code></pre>
-<p>then update your repository cache with:</p>
-<pre><code class="lang-shell">$ sudo apt-get update
-</code></pre>
-<h2 id="install-monkey">Install Monkey</h2>
+<p>On Debian and derivated systems such as Ubuntu, you need to add our APT server entry to your sources lists, please add the following content at bottom of your <strong>/etc/apt/sources.list</strong> file:</p>
+<h4 id="ubuntu-15-04-vivid">Ubuntu 15.04 (vivid)</h4>
+<pre><code>deb http://apt.fluentbit.io/ubuntu vivid main
+</code></pre><h4 id="debian-8-jessie">Debian 8 (jessie)</h4>
+<pre><code>deb http://apt.fluentbit.io/debian jessie main
+
+
+### Update your repositories database
+
+Now let your system update the _apt_ database:
+
+```bash
+$ sudo apt-get update
+</code></pre><h2 id="install-monkey">Install Monkey</h2>
 <p>Using the apt-get command you are able now to install the latest version of Monkey HTTP Server:</p>
 <pre><code class="lang-shell">$ sudo apt-get install monkey
 </code></pre>
