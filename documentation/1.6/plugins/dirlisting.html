@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="5.4" data-basepath=".." data-revision="Sat Sep 26 2015 21:07:51 GMT-0600 (CST)">
+    <div class="book" data-level="5.4" data-basepath=".." data-revision="Mon Oct 05 2015 11:22:00 GMT-0600 (CST)">
     
 
 <div class="book-summary">
@@ -714,7 +714,11 @@
 <pre><code class="lang-Python">[DIRLISTING]
     Theme guineo
 </code></pre>
-<p>The principal section is <strong>[DIRLISTING]</strong> and allows just one key called <strong>Theme</strong> to specify which theme should be loaded. The theme directory must exists in the same path than <strong>dirlisting.conf</strong> exists.</p>
+<p>The principal section is <strong>[DIRLISTING]</strong> and allows just one key called <strong>Theme</strong> to specify which theme should be loaded. The theme directory must exists in the same path than <strong>dirlisting.conf</strong> exists, another theme available is <em>bootstrap</em>.</p>
+<p>As the <strong>Dirlisting</strong> plugin is a handler, it needs to be enabled on the Virtual Host definition under the <strong>HANDLERS</strong> sections through a Match rule. The following example will define a Handler rule to make the <strong>Dirlisting</strong> plugin process all incoming request that refers to a directory :</p>
+<pre><code class="lang-python">[HANDLERS]
+    Match  /.*  dirlisting
+</code></pre>
 
                     
                     </section>
