@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="5.4" data-basepath=".." data-revision="Mon Oct 05 2015 11:22:00 GMT-0600 (CST)">
+    <div class="book" data-level="5.4" data-basepath=".." data-revision="Mon Oct 05 2015 11:27:33 GMT-0600 (CST)">
     
 
 <div class="book-summary">
@@ -709,12 +709,12 @@
 <h2 id="enable-plugin">Enable Plugin</h2>
 <p>If the plugin have not been built in static mode (check with <em>&apos;$ monkey -b&apos;</em>), you can enable the <strong>Directory Listing</strong> plugin through the following the steps mentioned on <a href="../configuration/plugins.html">Plugins</a> section. The plugin name is <strong>monkey-dirlisting.so</strong>, so make sure the plugin entry is <strong>Load</strong> and the absolute path is correct.</p>
 <h2 id="configuring">Configuring</h2>
-<p>Once the plugin is loaded, you need to define which <strong>Theme</strong> the plugin will use to render the directory content in HTML. At the moment the only <strong>Theme</strong> available is called <strong>Guineo</strong>.</p>
+<p>Once the plugin is loaded, you need to define which <strong>Theme</strong> the plugin will use to render the directory content in HTML. At the moment the themes available are <strong>guineo</strong> and <strong>bootstrap</strong>.</p>
 <p>The main configuration file resides in <strong>conf/plugins/dirlisting/dirlisting.conf</strong>, and it contain the following schema:</p>
 <pre><code class="lang-Python">[DIRLISTING]
     Theme guineo
 </code></pre>
-<p>The principal section is <strong>[DIRLISTING]</strong> and allows just one key called <strong>Theme</strong> to specify which theme should be loaded. The theme directory must exists in the same path than <strong>dirlisting.conf</strong> exists, another theme available is <em>bootstrap</em>.</p>
+<p>The principal section is <strong>[DIRLISTING]</strong> and allows just one key called <strong>Theme</strong> to specify which theme should be loaded. The theme directory must exists in the same path than <strong>dirlisting.conf</strong> exists.</p>
 <p>As the <strong>Dirlisting</strong> plugin is a handler, it needs to be enabled on the Virtual Host definition under the <strong>HANDLERS</strong> sections through a Match rule. The following example will define a Handler rule to make the <strong>Dirlisting</strong> plugin process all incoming request that refers to a directory :</p>
 <pre><code class="lang-python">[HANDLERS]
     Match  /.*  dirlisting
