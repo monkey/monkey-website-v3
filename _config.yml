@@ -25,16 +25,18 @@ footer:
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
+  - title: slack
+    url: http://slack.monkey-project.com
   - title: twitter
     url: http://twitter.com/monkeywebserver
-  - title: google-plus
-    url: https://plus.google.com/communities/109231235096868947735
   - title: linkedin
     url: https://www.linkedin.com/grp/home?gid=3211216
   - title: github
     url: http://github.com/monkey/monkey
   - title: rss
     url: http://blog.monkey-project.com/rss/
+  - title: google-plus
+    url: https://plus.google.com/communities/109231235096868947735
 
 # Postal address (add as many lines as necessary)
 address:
