@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Installation | Monkey Server v1.6</title>
+        <title>Build and Install | Monkey Server v1.6</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.1.0">
@@ -25,7 +25,7 @@
         
     
     
-    <link rel="next" href="../getting_started/debian_ubuntu.html" />
+    <link rel="next" href="../getting_started/cmake_options.html" />
     
     
     <link rel="prev" href="../getting_started/index.html" />
@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="2.1" data-basepath=".." data-revision="Mon Oct 05 2015 11:27:33 GMT-0600 (CST)">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Mon Oct 26 2015 12:22:13 GMT-0600 (CST)">
     
 
 <div class="book-summary">
@@ -126,20 +126,35 @@
                         
                             <b>2.1.</b>
                         
-                        Installation
+                        Build and Install
                     </a>
                 
             
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="getting_started/debian_ubuntu.html">
+        <li class="chapter " data-level="2.2" data-path="getting_started/cmake_options.html">
+            
+                
+                    <a href="../getting_started/cmake_options.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        CMake Options
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="getting_started/debian_ubuntu.html">
             
                 
                     <a href="../getting_started/debian_ubuntu.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>2.2.</b>
+                            <b>2.3.</b>
                         
                         Debian/Ubuntu
                     </a>
@@ -148,13 +163,13 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="getting_started/memory_allocator.html">
+        <li class="chapter " data-level="2.4" data-path="getting_started/memory_allocator.html">
             
                 
                     <a href="../getting_started/memory_allocator.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>2.3.</b>
+                            <b>2.4.</b>
                         
                         Memory Allocator
                     </a>
@@ -693,13 +708,16 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="installation">Installation</h1>
+                        <h1 id="build-and-installation">Build and Installation</h1>
 <p>Start with Monkey is pretty easy, you don&apos;t need to be a privileged system user, you can run it locally or install it in a generic path.</p>
 <h2 id="requirements">Requirements</h2>
 <p>Monkey uses very low CPU and Memory consumption, it works fine on any x86, x86_64 platform without problems.</p>
 <p>Regarding to the software required to run Monkey successfully, if you have a Linux box, it will require a Kernel version 2.6.32 (at least), for OSX it needs at least Yosemite. Besides that, the core of Monkey just requires two basic libraries: pthreads and libc, if you use Linux, we are 99% sure that you should not care about this requirement.</p>
+<h2 id="build-system">Build System</h2>
+<p>Before to proceed to build Monkey, you have be aware that the build system is based on CMake and we <em>optionally</em> provides a bash script called <em>configure</em> that works as a wrapper for who&apos;s not familiar with CMake.</p>
+<p>Below you will find instructions and options available at our configure script, if you want to use the CMake way, please make sure to read the <a href="cmake_options.html">Monkey + CMake</a> documentation for further explanations of the options available.</p>
 <h2 id="download">Download</h2>
-<p>Monkey is mainly distributed in a compressed tarball which contains the full source code, the available releases can be found in the official site <a href="http://monkey-project.com" target="_blank">http://monkey-project.com</a>. At the moment of this document is written, the 1.6.0 version is available. You can find more details in the <a href="http://monkey-project.com/downloads" target="_blank">downloads</a> section.</p>
+<p>Monkey is mainly distributed in a compressed tarball which contains the full source code, the available releases can be found in the official site <a href="http://monkey-project.com" target="_blank">http://monkey-project.com</a>. At the moment of this document is written, the 1.6.x series is available. You can find more details in the <a href="http://monkey-project.com/downloads" target="_blank">downloads</a> section.</p>
 <h2 id="configure-and-compile">Configure and compile</h2>
 <p>Once you get the tarball you can use the following simple steps to configure, compile and test Monkey locally:</p>
 <pre><code class="lang-shell">$ tar zxfv monkey-1.6.0.tar.gz
@@ -782,7 +800,7 @@ Home  : http://monkey-project.com
         <a href="../getting_started/index.html" class="navigation navigation-prev " aria-label="Previous page: Getting Started"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../getting_started/debian_ubuntu.html" class="navigation navigation-next " aria-label="Next page: Debian/Ubuntu"><i class="fa fa-angle-right"></i></a>
+        <a href="../getting_started/cmake_options.html" class="navigation navigation-next " aria-label="Next page: CMake Options"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

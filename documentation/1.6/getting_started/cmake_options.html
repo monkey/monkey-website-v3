@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>CGI | Monkey Server v1.6</title>
+        <title>CMake Options | Monkey Server v1.6</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.1.0">
@@ -25,10 +25,10 @@
         
     
     
-    <link rel="next" href="../plugins/dirlisting.html" />
+    <link rel="next" href="../getting_started/debian_ubuntu.html" />
     
     
-    <link rel="prev" href="../plugins/cheetah_shell.html" />
+    <link rel="prev" href="../getting_started/installation.html" />
     
 
         
@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="5.3" data-basepath=".." data-revision="Mon Oct 26 2015 12:22:13 GMT-0600 (CST)">
+    <div class="book" data-level="2.2" data-basepath=".." data-revision="Mon Oct 26 2015 12:22:13 GMT-0600 (CST)">
     
 
 <div class="book-summary">
@@ -133,7 +133,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="getting_started/cmake_options.html">
+        <li class="chapter active" data-level="2.2" data-path="getting_started/cmake_options.html">
             
                 
                     <a href="../getting_started/cmake_options.html">
@@ -376,7 +376,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="5.3" data-path="plugins/cgi.html">
+        <li class="chapter " data-level="5.3" data-path="plugins/cgi.html">
             
                 
                     <a href="../plugins/cgi.html">
@@ -708,24 +708,280 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="cgi-common-gateway-interface">CGI - Common Gateway Interface</h1>
-<p>The CGI (Common Gateway Interface) allows to interact with a third party program that process a HTTP request and generate content on the fly. This is the old-fashion mechanism to run programs through a HTTP server.</p>
-<p>When a program runs using the CGI interface, the server will spawn a new process to make the script run on new environment, this is a known major performance issue of CGI.</p>
+                        <h1 id="cmake-options">CMake Options</h1>
+<p><a href="http://monkey-project.com" target="_blank">Monkey</a> build system is based on <a href="http://www.cmake.org" target="_blank">CMake</a>, despites we provide a wrapper bash script called <em>configure</em>, you may want to build using CMake directly, on this section you will find the options available.</p>
+<h2 id="getting-started-with-cmake">Getting Started with CMake</h2>
+<p>We suggest that you always use CMake command line inside the <em>build/</em> directory located on the Monkey sources, to build it with default options just do:</p>
+<pre><code class="lang-bash">$ cmake ../
+</code></pre>
+<p>If you want to turn on/off some of the options, you need to use the <em>-D</em> argument plus the option with the new value. As an example, if you want to disable the Backtrace support the following command will do it:</p>
+<pre><code class="lang-bash">$ cmake -DWITH_BACKTRACE=OFF ../
+</code></pre>
 <blockquote>
-<p>Note: If your server requires to achieve high performance, is suggested to use the FastCGI interface instead of the old-fashion CGI.</p>
+<p>most of the options are boolean, for hence they accept values ON, OFF, YES or NO.</p>
 </blockquote>
-<h2 id="enable-plugin">Enable Plugin</h2>
-<p>If the plugin have not been built in static mode (check with <em>&apos;$ monkey -b&apos;</em>), you can enable the <strong>CGI</strong> plugin through the following the steps mentioned on <a href="../configuration/plugins.html">Plugins</a> section. The plugin name is <strong>monkey-cgi.so</strong>, so make sure the plugin entry is <strong>Load</strong> and the absolute path is correct.</p>
-<h2 id="configuring">Configuring</h2>
-<p>The <strong>CGI</strong> plugin is a handler, for hence it needs to be enabled on the Virtual Host definition under the <strong>HANDLERS</strong> sections through a Match rule. The following example will define a Handler rule to make the <strong>CGI</strong> plugin process all incoming request that ends in <em>.cgi</em>:</p>
-<pre><code class="lang-python">[HANDLERS]
-    Match  /.*\.cgi  cgi
-</code></pre>
-<p>Optionally, the <strong>CGI</strong> plugin support an extra parameter into the Match rule to specify an interpreter, e.g:</p>
-<pre><code class="lang-python">[HANDLERS]
-    Match  /.*\.cgi  cgi  /bin/bash
-</code></pre>
-<p>This last parameter is optional and is useful for cases for content that needs to be interpreted by Perl, Python, PHP-cli or other.</p>
+<p>If you are testing and building multiple times, CMake creates a cache of your setup and sometimes you will find your options are not being considered, we recommend that you remove all content inside the <em>build/</em> directory that you are using to avoid problems.</p>
+<h2 id="general-options">General Options</h2>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>description</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BUILD_LOCAL</td>
+<td>Build Monkey locally, no install required</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_DEBUG</td>
+<td>Build with debug symbols</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_ACCEPT</td>
+<td>Use accept(2) system call</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_ACCEPT4</td>
+<td>Use accept4(2) system call</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>WITH_LINUX_KQUEUE</td>
+<td>Use Linux kqueue emulator</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_TRACE</td>
+<td>Enable Trace mode</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_UCLIB</td>
+<td>Enable uClib libc support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_MUSL</td>
+<td>Enable Musl libc support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_BACKTRACE</td>
+<td>Enable backtrace feature</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>WITH_LINUX_TRACE</td>
+<td>Enable Lttng support</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_PTHREAD_TLS</td>
+<td>Use old Pthread TLS mode</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_SYSTEM_MALLOC</td>
+<td>Use default system memory allocator (default: built-in Jemalloc)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_MBEDTLS_SHARED</td>
+<td>Use mbedTLS as shared library</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plugins">Plugins</h2>
+<p>Here is the list of options for each plugins and it default behavior for the build system. Note that when building plugins, they can be build in two modes: static or shared. Plugins that are build in static mode are build-together with the target binary, when shared mode is used, the plugins are created as a shared library that are loaded everytime Monkey starts.</p>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>name</th>
+<th>description</th>
+<th>build</th>
+<th>mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WITH_PLUGIN_AUTH</td>
+<td>auth</td>
+<td>Enable Basic Authentication</td>
+<td>Yes</td>
+<td>shared</td>
+</tr>
+<tr>
+<td>WITH_PLUGIN_CGI</td>
+<td>cgi</td>
+<td>CGI support</td>
+<td>Yes</td>
+<td>shared</td>
+</tr>
+<tr>
+<td>WITH_PLUGIN_CHEETAH</td>
+<td>cheetah</td>
+<td>Cheetah Shell Interface</td>
+<td>Yes</td>
+<td>shared</td>
+</tr>
+<tr>
+<td>WITH_PLUGIN_DIRLISTING</td>
+<td>dirlisting</td>
+<td>Directory Listing</td>
+<td>Yes</td>
+<td>shared</td>
+</tr>
+<tr>
+<td>WITH_PLUGIN_FASTCGI</td>
+<td>fastcgi</td>
+<td>FastCGI support</td>
+<td>Yes</td>
+<td>shared</td>
+</tr>
+<tr>
+<td>WITH_PLUGIN_LIANA</td>
+<td>liana</td>
+<td>Basic Network Layer</td>
+<td>Yes</td>
+<td><strong>static</strong></td>
+</tr>
+<tr>
+<td>WITH_PLUGIN_LOGGER</td>
+<td>logger</td>
+<td>Log Writer</td>
+<td>Yes</td>
+<td>shared</td>
+</tr>
+<tr>
+<td>WITH_PLUGIN_MANDRIL</td>
+<td>mandril</td>
+<td>Security</td>
+<td>Yes</td>
+<td>shared</td>
+</tr>
+<tr>
+<td>WITH_PLUGIN_TLS</td>
+<td>tls</td>
+<td>TLS/SSL support</td>
+<td>No</td>
+<td><strong>static</strong></td>
+</tr>
+</tbody>
+</table>
+<p>For more details about loading plugins built in shared mode, please refer to the <a href="../configuration/plugins.html">Plugins</a> section.</p>
+<h2 id="extra-build-options">Extra build options</h2>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>description</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WITHOUT_BIN</td>
+<td>Do not build Monkey binary</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITHOUT_CONF</td>
+<td>Skip configuration files</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_STATIC_LIB_MODE</td>
+<td>Build Monkey as a static library</td>
+<td>No</td>
+</tr>
+<tr>
+<td>WITH_PLUGINS</td>
+<td>Define a list of plugins to be included in the build phase. This variable accept the plugins name separated by a coma (<strong>,</strong>): -DWITH_PLUGINS=tls,fastcgi</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>WITHOUT_PLUGINS</td>
+<td>Define a list of plugins that <strong>must not</strong> be included in the build phase. This variable accept the plugins name separated by a coma (<strong>,</strong>): -DWITHOUT_PLUGINS=cgi,fastcgi</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>STATIC_PLUGINS</td>
+<td>Define a list of enabled plugins that will be build in static mode. This variable accept the plugins name separated by a coma (<strong>,</strong>): -DSTATIC_PLUGINS=liana,tls</td>
+<td>liana</td>
+</tr>
+<tr>
+<td>SKIP_EMPTY_DIRS</td>
+<td>When installing, do not create the empty directories for the PID and logs</td>
+<td>No</td>
+</tr>
+<tr>
+<td>DEFAULT_PORT</td>
+<td>Set the default TCP port</td>
+<td>2001</td>
+</tr>
+<tr>
+<td>DEFAULT_USER</td>
+<td>Set the default user which Monkey must switch to when running as root</td>
+<td>www-data</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-path-options">Install path options</h2>
+<p>The following options affects the setup for the file system paths when installing Monkey:</p>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CMAKE_INSTALL_PREFIX</td>
+<td>Installation prefix path</td>
+</tr>
+<tr>
+<td>CMAKE_INSTALL_SBINDIR</td>
+<td>Binary dir target path</td>
+</tr>
+<tr>
+<td>CMAKE_INSTALL_MANDIR</td>
+<td>Man pages path</td>
+</tr>
+<tr>
+<td>INSTALL_SYSCONFDIR</td>
+<td>Configuration files path</td>
+</tr>
+<tr>
+<td>INSTALL_WEBROOTDIR</td>
+<td>Default HTML content path</td>
+</tr>
+<tr>
+<td>INSTALL_INCLUDEDIR</td>
+<td>Development Header files path</td>
+</tr>
+<tr>
+<td>INSTALL_LOGDIR</td>
+<td>Log directory path</td>
+</tr>
+<tr>
+<td>PID_PATH</td>
+<td>Target path to store the pid file</td>
+</tr>
+<tr>
+<td>PID_FILE</td>
+<td>Name of the pid file</td>
+</tr>
+</tbody>
+</table>
 
                     
                     </section>
@@ -736,10 +992,10 @@
         </div>
 
         
-        <a href="../plugins/cheetah_shell.html" class="navigation navigation-prev " aria-label="Previous page: Cheetah! Shell"><i class="fa fa-angle-left"></i></a>
+        <a href="../getting_started/installation.html" class="navigation navigation-prev " aria-label="Previous page: Build and Install"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../plugins/dirlisting.html" class="navigation navigation-next " aria-label="Next page: Directory Listing"><i class="fa fa-angle-right"></i></a>
+        <a href="../getting_started/debian_ubuntu.html" class="navigation navigation-next " aria-label="Next page: Debian/Ubuntu"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
