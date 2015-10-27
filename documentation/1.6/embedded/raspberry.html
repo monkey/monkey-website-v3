@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="6.1" data-basepath=".." data-revision="Mon Oct 26 2015 12:22:13 GMT-0600 (CST)">
+    <div class="book" data-level="6.1" data-basepath=".." data-revision="Mon Oct 26 2015 19:03:35 GMT-0600 (CST)">
     
 
 <div class="book-summary">
@@ -710,13 +710,14 @@
                     
                         <h1 id="raspberry-pi">Raspberry Pi</h1>
 <p><a href="http://monkey-project.com" target="_blank">Monkey</a> is fully supported on the <a href="http://raspberrypi.org" target="_blank">Raspberry Pi</a> board. If you want to use Monkey in your Raspberry Pi device, you can build it from sources as described in the <a href="../getting_started/index.html">Getting Started</a> section or use our binary <strong>Debian</strong> packages that can be obtained from our special APT repository for Raspbian.</p>
+<p>Note that starting from Monkey v1.6.4, we only distribute packages for <a href="https://www.raspberrypi.org/blog/raspbian-jessie-is-here/" target="_blank">Raspbian Jessie</a>.</p>
 <h2 id="server-gpg-key">Server GPG key</h2>
 <p>The first step is to add our server GPG key to your keyring, on that way you can get our signed packages:</p>
 <pre><code class="lang-shell">$ wget -qO - http://apt.monkey-project.com/monkey.key | sudo apt-key add -
 </code></pre>
 <h2 id="update-your-sources-lists">Update your sources lists</h2>
 <p>On Debian and derivated systems such as Raspbian, you need to add our APT server entry to your sources lists, please add the following content at bottom of your /etc/apt/sources.list file:</p>
-<pre><code class="lang-shell">deb http://apt.monkey-project.com/raspbian wheezy main
+<pre><code class="lang-shell">deb http://apt.monkey-project.com/raspbian jessie main
 </code></pre>
 <p>then update your repository cache with:</p>
 <pre><code class="lang-shell">$ sudo apt-get update
