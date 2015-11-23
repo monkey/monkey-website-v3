@@ -5,8 +5,8 @@ url: http://monkey-project.com
 description: "Monkey is a fast and scalable Open Source web server"
 skills: "HTTP, Linux"
 highlighter: pygments
-mk_version: 1.6.5
-mk_date: October 30, 2015
+mk_version: 1.6.6
+mk_date: November 23, 2015
 mk_major: 1.6
 
 # Contact form: comment the line below if you want to stick with the default PHP contact form
