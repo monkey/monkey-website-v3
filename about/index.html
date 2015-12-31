@@ -46,7 +46,7 @@ intro: Insights of Monkey
       <div class="col-lg-8 col-lg-offset-2">
         <h3>Internals</h3>
         <p>
-          Monkey uses an hybrid mechanism composed by a fixed number of threads being each one capable to attend thousands of clients thanks to the event-driven model based in asyncrhonous sockets.
+          Monkey uses an hybrid mechanism composed by a fixed number of threads being each one capable to attend thousands of clients thanks to the event-driven model based in asynchronous sockets.
         </p>
         <p>
           The interaction between the scheduler and each worker thread is lock free, avoiding race conditions and exposing a huge performance compared to other available options. It also takes the most of the Linux Kernel to optimize the work using specific system calls based on zero-copy strategy.
